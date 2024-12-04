@@ -1,1 +1,56 @@
-// app global css in SCSS form
+body {
+  /* Light theme colors */
+  --text-color-light: #272525; // Define your light theme text color
+  --background-color-light: rgb(
+    240,
+    237,
+    237
+  ); // Define your light background color
+  /* Dark theme colors */
+  --text-color-dark: #eae5e5; // Define your dark theme text color
+  --background-color-dark: #333; // Define your dark background color
+}
+
+body {
+  background: var(--background-color-light) !important;
+}
+body.body--dark {
+  color: var(--text-color-dark) !important;
+  background: var(--background-color-dark) !important;
+}
+
+.q-timeline {
+  color: var(--text-color-light) !important;
+}
+
+.q-timeline--dark {
+  color: var(--text-color-dark) !important;
+}
+
+.q-chip {
+  color: var(--text-color-light) !important;
+}
+
+.q-chip--dark {
+  color: var(--text-color-dark) !important;
+}
+.q-scrollarea {
+  border-right: 1px solid #ddd;
+}
+.q-scrollarea--dark {
+  border-right: 1px solid #4b4a4a;
+}
+.q-drawer {
+}
+.q-drawer--dark {
+  background: var(--background-color-dark) !important;
+}
+
+.q-message {
+  margin-bottom: 8px;
+
+  &-text {
+    border-radius: 12px;
+    padding: 8px 12px;
+  }
+}
