@@ -9,6 +9,7 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
 const { configure } = require("quasar/wrappers");
+require("dotenv").config();
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -62,6 +63,10 @@ module.exports = configure(function (/* ctx */) {
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
+
+      env: {
+        ENVIRONMENT: process.env.ENVIRONMENT,
+      },
 
       vitePlugins: [
         [

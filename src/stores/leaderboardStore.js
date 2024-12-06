@@ -21,12 +21,10 @@ export const useLeaderboardStore = defineStore("leaderboard", {
         path = path + "?search=" + name;
       }
       let res = await springGetAPI(path);
-      console.log(res);
       this.users = res;
     },
     async addUser(data) {
       let res = await springPostAPI("users", data);
-      console.log(res);
       if (!("error" in res)) {
         this.users.push(res);
       }
@@ -35,8 +33,6 @@ export const useLeaderboardStore = defineStore("leaderboard", {
       let res = await springDeleteAPI(`users/${userId}`);
       if (!("error" in res)) {
         const index = this.users.findIndex((u) => u._id === userId);
-        console.log("inn", index);
-
         if (index !== -1) {
           this.users.splice(index, 1);
         }
